@@ -1,33 +1,22 @@
+import React from 'react';
 import { Dispatch, SetStateAction } from 'react';
+import { FaTimes } from 'react-icons/fa';
 import '../styles/SideBar.style.css'
-import { 
-    FaTimes, 
-    FaHome, 
-    FaEnvelope, 
-    FaRegSun, 
-    FaUserAlt, 
-    FaIdCardAlt, 
-    FaRegFileAlt,
-    FaRegCalendarAlt,
-    FaChartBar
-  } from 'react-icons/fa'
 
 interface SideBarProps {
   active: Dispatch<SetStateAction<boolean>>;
 }
 
 const SideBar: React.FC<SideBarProps> = ({ active }) => {
-  // Your SideBar component logic here
-const carrinho = ({active }: { active: Dispatch<SetStateAction<boolean>> }) => {
-    const closeSidebar = () => {
-        active(false)
-    }
-}
-  
+  const closeSidebar = () => {
+    active(false);
+  };
+
   return (
-   <><aside carrinho={active}>
-        <FaTimes onClick={closeSidebar} /> 
-    </aside></>
+    <aside className="sidebar">
+      <FaTimes onClick={closeSidebar} />
+      {/* Add other sidebar content here */}
+    </aside>
   );
 };
 
